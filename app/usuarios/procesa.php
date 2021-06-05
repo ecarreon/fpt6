@@ -15,8 +15,8 @@
 			$conexion=Conectarse();
 			
 			//Recojo los valores introducidos por el usuario en el formulario de acceso
-			$usr = $_POST['usr'];
-			$pwd = $_POST['pwd'];
+			$usr = $_POST["'usr'"];
+			$pwd = $_POST["'pwd'"];
 
 			//Ejecuto la consulta para validar que exista coincidencia con el usuario y contraseña indicados
 			$resultado=mysqli_query($conexion,"SELECT idUsuario,usuario FROM usuarios WHERE usuario='$usr' AND contrasena='$pwd'");	

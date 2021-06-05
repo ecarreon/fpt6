@@ -29,8 +29,18 @@
 				
 				<input class="btn btn-primary btn-lg btn-block" type="submit" value="Ingresar">
 			</form>
+             <button class="btn btn-primary  btn-lg btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                ¿Que hacer si aun no tengo una cuenta para ingresar?
+            </button>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    Si aun no tienes una cuenta, favor de regresar a la <a href=../../index.html>pagina principal</a> y crear una cuenta o directamente <a href=../../index.html>crea una cuenta</a>
+                </div>
+            </div>
 		</div>
         <p>
+        <p>
+            
            
 		
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
