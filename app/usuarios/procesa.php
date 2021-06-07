@@ -19,11 +19,11 @@
 			$pwd = $_POST["'pwd'"];
 
 			//Ejecuto la consulta para validar que exista coincidencia con el usuario y contraseña indicados
-			$resultado=mysqli_query($conexion,"SELECT idUsuario,usuario FROM usuarios WHERE usuario='$usr' AND contrasena='$pwd'");	
+			$resultado=mysqli_query($conexion,"SELECT IdUsuario,usuario FROM usuarios WHERE usuario='$usr' AND contrasena='$pwd'");	
 			//Si la consulta me devuelve VERDADERO, procedo a mostrar la bienvenida
 			if($registro = mysqli_fetch_row($resultado))
 			{
-				$_SESSION["idUsuario"] = $registro[0];
+				$_SESSION["IdUsuario"] = $registro[0];
 				?>
 				<div class="jumbotron">
 					<h1 class="display-4" style="text-align:center;">Bienvenid@ <?php echo strtoupper($registro[1]); ?> a la base de datos <span class="badge badge-secondary">Hayas MUN</span></h1>
