@@ -17,6 +17,13 @@
 			//Recojo los valores introducidos por el usuario en el formulario de acceso
 			$usr = $_POST["'usr'"];
 			$pwd = $_POST["'pwd'"];
+        
+        //******* Método de seguridad ***********
+			//Escape de la inyección SQL		
+			$usr=mysqli_real_escape_string($conexion, $usr);
+        
+			$pwd=mysqli_real_escape_string($conexion, $pwd);
+
 
 			//Ejecuto la consulta para validar que exista coincidencia con el usuario y contraseña indicados
 			$resultado=mysqli_query($conexion,"SELECT IdUsuario,usuario FROM usuarios WHERE usuario='$usr' AND contrasena='$pwd'");	
@@ -27,7 +34,7 @@
 				?>
 				<div class="jumbotron">
 					<h1 class="display-4" style="text-align:center;">Bienvenid@ <?php echo strtoupper($registro[1]); ?> a la base de datos <span class="badge badge-secondary">Hayas MUN</span></h1>
-					<p class="lead">...</p>
+					<p class="lead">Favor de asignar su comité en <a href=../categoria/index.php>esta página</a></p>
 					<hr class="my-4">
 				</div>
 				
