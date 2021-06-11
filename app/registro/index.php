@@ -1,12 +1,4 @@
-<?php
-	session_start();
-	if( ! isset($_SESSION["IdUsuario"]) )
-	{
-		echo "Por favor inicie sesión";
-		header('Location: ../../index.html');
-		return;
-	}
-?>
+
 
 <html>
 	<head>
