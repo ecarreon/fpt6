@@ -3,7 +3,7 @@
 	if( ! isset($_SESSION["IdUsuario"]) )
 	{
 		echo "Por favor inicie sesión";
-		header('Location: ../../index.html');
+		header('Location: ../../../index.html');
 		return;
 	}
 ?>
@@ -18,33 +18,22 @@
 	<body>
 		<?php
 			//Realizo la ocnexión al a Base de Datos
-			include("conexion.php");
+			include("../conexion.php");
 			$conexion=Conectarse();
 			
 			//Recojo los valores introducidos por el usuario en el formulario de ac
-			$Nombre = mysqli_real_escape_string($conexion,$_POST['Nombre']);
-			$Apat = mysqli_real_escape_string($conexion,$_POST['Apat']);
-			$Amat = mysqli_real_escape_string($conexion,$_POST['Amat']);
-			$Escuela = mysqli_real_escape_string($conexion,$_POST['Escuela']);
-			$Correo = mysqli_real_escape_string($conexion,$_POST['Correo']);
-			$Numero = mysqli_real_escape_string($conexion,$_POST['Numero']);
-			$Usuario = mysqli_real_escape_string($conexion,$_POST['Usuario']);
-			$Contrasena = mysqli_real_escape_string($conexion,$_POST['Contrasena']);
+			$ClimateCC = mysqli_real_escape_string($conexion,$_POST['ClimateCC']);
 			
-			$consulta="INSERT INTO usuarios(Usuario,Contrasena) VALUES('$Usuario','$Contrasena')";
+			$consulta="INSERT INTO comites(ClimateCC,IdUsuario) VALUES('$ClimateCC',LAST_INSERT_ID() )";
 			if(mysqli_query($conexion,$consulta))
 			{
-				$consulta2="INSERT INTO registro(Nombre,Apat,Amat,Escuela,Correo,Numero,IdUsuario)VALUES('$Nombre','$Apat','$Amat','$Escuela','$Correo','$Numero',LAST_INSERT_ID() )";
-				if(mysqli_query($conexion,$consulta2))
-				{
-					?>
-						<div class="alert alert-info" role="alert">
-							Registro creado correctamente
-						</div>
-						
-						<meta http-equiv="refresh" content="2;url=index2.php" />
-					<?php
-				}
+				?>
+					<div class="alert alert-info" role="alert">
+						Registro creado correctamente
+					</div>
+					
+					<meta http-equiv="refresh" content="2;url=../../../index.html" />
+				<?php
 			}
 			else
 			{

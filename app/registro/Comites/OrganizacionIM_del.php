@@ -1,4 +1,12 @@
-
+<?php
+	session_start();
+	if( ! isset($_SESSION["IdUsuario"]) )
+	{
+		echo "Por favor inicie sesión";
+		header('Location: ../../../index.html');
+		return;
+	}
+?>
 
 <html>
 	<head>
@@ -10,19 +18,13 @@
 	<body>
 		<?php
 			//Realizo la ocnexión al a Base de Datos
-			include("conexion.php");
+			include("../conexion.php");
 			$conexion=Conectarse();
 			
 			//Recojo los valores introducidos por el usuario en el formulario de ac
-			$GeneralA = mysqli_real_escape_string($conexion,$_POST['GeneralA']);
-			$unWomen = mysqli_real_escape_string($conexion,$_POST['unWomen']);
-			$ComiteOi = mysqli_real_escape_string($conexion,$_POST['ComiteOi']);
-			$ClimateCC = mysqli_real_escape_string($conexion,$_POST['ClimateCC']);
-			$OrganizacionMTU = mysqli_real_escape_string($conexion,$_POST['OrganizacionMTU']);
-			$Unicef = mysqli_real_escape_string($conexion,$_POST['Unicef']);
 			$OrganizacionIM = mysqli_real_escape_string($conexion,$_POST['OrganizacionIM']);
 			
-			$consulta="INSERT INTO comites(GeneralA,unWomen,ComiteOi,ClimateCC,OrganizacionMTU,Unicef,OrganizacionIM,IdUsuario) VALUES('$GeneralA','$unWomen','$ComiteOi','$ClimateCC','$OrganizacionMTU','$Unicef','$OrganizacionIM',LAST_INSERT_ID() )";
+			$consulta="INSERT INTO comites(OrganizacionIM,IdUsuario) VALUES('$OrganizacionIM',LAST_INSERT_ID() )";
 			if(mysqli_query($conexion,$consulta))
 			{
 				?>
@@ -30,7 +32,7 @@
 						Registro creado correctamente
 					</div>
 					
-					<meta http-equiv="refresh" content="2;url=app/categoria/indexlistar.php" />
+					<meta http-equiv="refresh" content="2;url=../../../index.html" />
 				<?php
 			}
 			else

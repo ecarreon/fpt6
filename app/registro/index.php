@@ -1,4 +1,12 @@
-
+<?php
+	session_start();
+	if( ! isset($_SESSION["IdUsuario"]) )
+	{
+		echo "Por favor inicie sesión";
+		header('Location: ../../index.html');
+		return;
+	}
+?>
 
 <html>
 	<head>
@@ -6,6 +14,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body style="background-color:#45B39D;">
 		<H1>Registro</H1>
@@ -25,7 +34,7 @@
 								<table>
 									<td> <strong>Escuela:</strong> <input type="text" class="form-control mr-5" name="Escuela" required> </td>
 									<td> <strong>Correo:</strong> <input type="email" class="form-control mr-5" name="Correo" required> </td>
-									<td> <strong>Número telefónico:</strong> <input type="tel" class="form-control mr-5" name="Numero" required> </td>
+									<td> <strong>Número telefónico:</strong> <input type="tel" placeholder="1234567890" class="form-control mr-5" name="Numero" required> </td>
 								</table>
 						</fieldset>
 						
@@ -35,7 +44,7 @@
 				<br>
 
 				<div class="row">
-					<div class="col-13">
+					<div class="col-13"> 
 					<legend>Usuario</legend>
 						<div class="form-group">
 							<label for=""> <strong>Usuario</strong> </label>
@@ -43,12 +52,16 @@
 						</div>
 						<div class="form-group">
 							<label for=""> <strong>Contraseña</strong> </label>
-							<input type="password" class="form-control mr-5" name="Contrasena" required>
+							
+							<class="first-example">
+							<input type="password" class="form-control mr-5" name="Contrasena" id="password" required>
+							<input type="checkbox" onchange="document.getElementById('password').type = this.checked ? 'text' : 'password'"> Mostrar contraseña
+
 						</div>
 					</div>
 				</div>
 				
-				<a class="btn btn-primary" href="listar.php" role="button">Cancelar</a>
+				<a class="btn btn-primary" href="../../index.html" role="button">Cancelar</a>
 				<input class="btn btn-success text-right" type="submit" value="Guardar">
 			</form>
 		</div>
