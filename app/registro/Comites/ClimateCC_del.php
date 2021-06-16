@@ -18,7 +18,7 @@
 	<body>
 		<?php
 			//Realizo la ocnexión al a Base de Datos
-			include("../conexion.php");
+			include("../../bd/conexion.php");
 			$conexion=Conectarse();
 			
 			//Recojo los valores introducidos por el usuario en el formulario de ac
