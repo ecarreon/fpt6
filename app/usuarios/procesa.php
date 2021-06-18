@@ -15,8 +15,8 @@
 			$conexion=Conectarse();
 			
 			//Recojo los valores introducidos por el usuario en el formulario de acceso
-			$usr = $_POST["'usr'"];
-			$pwd = $_POST["'pwd'"];
+			$usr = $_POST['usr'];
+			$pwd = $_POST['pwd'];
         
         //******* Método de seguridad ***********
 			//Escape de la inyección SQL		
