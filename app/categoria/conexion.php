@@ -2,7 +2,7 @@
 	function Conectarse()
 	{
 		//Los parámetros son(host, usuario, contraseña,nombre_base)
-		if (!($conexion=mysqli_connect("localhost","root","","mun")))
+		if (!($conexion=mysqli_connect("localhost","root","","bd")))
 		{
 			echo "Error conectando a la base de datos.";
 			exit();
