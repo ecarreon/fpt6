@@ -34,7 +34,7 @@
 				?>
 				<div class="jumbotron">
 					<h1 class="display-4" style="text-align:center;">Bienvenid@ <?php echo strtoupper($registro[1]); ?> a la base de datos <span class="badge badge-secondary">Hayas MUN</span></h1>
-					<p class="lead">Favor de asignar su comité en <a href=../categoria/index.php>esta página</a></p>
+					<p class="lead">Favor de asignar su comité en <a href=../../categoria/insertar.html>esta página</a></p>
 					<hr class="my-4">
 				</div>
 				
