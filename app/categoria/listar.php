@@ -8,7 +8,7 @@
 	<body>
 		<?php
 			//Realizo la ocnexión al a Base de Datos
-			include("conexion.php");
+			include("../../app/bd/conexion.php");
 			$conexion=Conectarse();
 			
 			$consulta="SELECT* FROM registro ORDER BY idPersona";	
