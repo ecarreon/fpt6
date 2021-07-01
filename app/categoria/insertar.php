@@ -9,7 +9,7 @@
 		<?php
 			//Realizo la conexión al a Base de Datos
 
-			include("conexion.php");
+			include("../../app/bd/conexion.php");
 			
 			$conexion=Conectarse();
 			
